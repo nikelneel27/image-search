@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import image from "/Users/nikhil/Desktop/unsplash-image-search/src/assets/unsp.svg";
+import image from "../assets/unsp.svg";
 import HeaderSecond from "./HeaderSecond";
 import Search from "./Search";
 export default {
