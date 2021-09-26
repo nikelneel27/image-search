@@ -10,7 +10,9 @@
       </p>
       <!-- </div> -->
       <!-- <div> -->
-      <button @click="handleHomeNav">Take me to Home</button>
+      <button class="coming-soon-btn" @click="handleHomeNav">
+        Take me to Home
+      </button>
       <!-- </div> -->
     </div>
   </div>
@@ -74,7 +76,7 @@ body {
     color: #a79d9d;
     padding-left: 135px;
   }
-  button {
+  .coming-soon-btn {
     font-size: 1.3rem;
     color: white;
     margin: 40px 425px;

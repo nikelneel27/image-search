@@ -44,6 +44,7 @@ export default {
 <style lang="scss" scoped>
 img {
   max-width: 100%;
+  object-fit: contain;
 }
 .banner {
   position: relative;

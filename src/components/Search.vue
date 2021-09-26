@@ -53,7 +53,7 @@ export default {
   outline: none;
   border-radius: 20px;
 }
-input {
+.search-field {
   margin-left: 40px;
   padding-left: 60px;
 }

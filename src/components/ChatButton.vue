@@ -13,6 +13,6 @@ i.fas.fa-comment-dots.fa-3x.chat-button {
   position: fixed;
   top: 610px;
   left: 20px;
-  color: rgb(51, 51, 51);
+  color: #66fcf1;
 }
 </style>
