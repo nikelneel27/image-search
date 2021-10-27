@@ -72,7 +72,6 @@ export default {
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
           console.log(user);
-          // this.$router.replace({ name: "dashboard" });
           this.$router.push("/dashboard");
         } catch (err) {
           const error = err.message;

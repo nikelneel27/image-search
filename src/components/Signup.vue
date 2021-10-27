@@ -8,6 +8,24 @@
         <form @submit.prevent="signUpClick">
           <h3>Welcome to Image Search</h3>
           <div class="login-sign-up-form-control">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              placeholder="Enter Name"
+              v-model="name"
+              id="name-input"
+            />
+          </div>
+          <div class="login-sign-up-form-control">
+            <label for="number">Mobile Number</label>
+            <input
+              type="number"
+              placeholder="Enter Mobile Number"
+              v-model="number"
+              id="number-input"
+            />
+          </div>
+          <div class="login-sign-up-form-control">
             <label for="login">Email</label>
             <input
               class="px-2"
@@ -59,10 +77,23 @@ export default {
     return {
       email: "",
       password: "",
+      number: "",
+      name: "",
       error: "",
+      user: {},
     };
   },
   methods: {
+    async writeUserData(user) {
+      console.log(user);
+      await firebase
+        .database()
+        .ref("users/" + user.uid)
+        .set(user)
+        .catch((error) => {
+          console.log(error.message);
+        });
+    },
     switchToSignUp() {
       this.$router.push("/login");
     },
@@ -72,11 +103,23 @@ export default {
       } else {
         console.log("Signup");
         try {
-          const user = await firebase
+          const userAuth = await firebase
             .auth()
             .createUserWithEmailAndPassword(this.email, this.password);
-          console.log(user);
-          // this.$router.replace({ name: "dashboard" });
+          console.log(userAuth);
+          var user = {
+            name: this.name,
+            number: this.number,
+            email: this.email,
+            uid: userAuth.user.uid,
+          };
+          this.writeUserData(user);
+          //   firebase.usersCollection.doc(user.uid).set({
+          //     displayName: this.name,
+          //     // number: this.number,
+          //   });
+          //   console.log(userAuth);
+          //   // this.$router.replace({ name: "dashboard" });
           this.$router.push("/dashboard");
         } catch (err) {
           const error = err.message;
@@ -124,8 +167,10 @@ form {
 
 .login-right {
   position: absolute;
-  top: 220px;
-  right: 100px;
+  max-width: 500px;
+  width: 100%;
+  top: 100px;
+  right: 40px;
   opacity: 0.7;
   background-color: #0b0c10;
   color: #fff;
@@ -134,19 +179,21 @@ form {
   }
   .login-sign-up-form-control {
     margin-bottom: 20px;
-    #email-input {
-      margin-left: 68px;
-      background-color: #1f2833;
-      outline: none;
-      border: none;
-      color: #fff;
+    label {
+      margin-bottom: 10px;
     }
-    #password-input {
-      margin-left: 40px;
+    #email-input,
+    #password-input,
+    #name-input,
+    #number-input {
+      display: block;
+
       background-color: #1f2833;
       outline: none;
-      color: #fff;
       border: none;
+      color: #fff;
+      width: 100%;
+      height: 40px;
     }
   }
 

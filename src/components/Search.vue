@@ -36,9 +36,9 @@ export default {
 </script>
 
 <style>
-.search {
+/* .search {
   padding-top: 20px;
-}
+} */
 
 .search i {
   position: absolute;
@@ -48,7 +48,8 @@ export default {
   margin-left: 50px;
 }
 .search-field {
-  width: 690px;
+  max-width: 690px;
+  width: 100%;
   height: 40px;
   outline: none;
   border-radius: 20px;

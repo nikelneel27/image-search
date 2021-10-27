@@ -3,6 +3,7 @@
     <button v-if="isLoggedIn" @click="logoutClick" class="logout">
       Logout
     </button>
+    <!-- <h4>{{ currentUser }}</h4> -->
   </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {
   border: 1px solid #66fcf1;
   border-radius: 5px;
   width: 80px;
-  margin-left: 40px;
+  margin-left: 20px;
   cursor: pointer;
 }
 </style>

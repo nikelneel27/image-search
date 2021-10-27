@@ -6,7 +6,20 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="hero-blog shadow m-1">
-              <img class="img-fluid" src="../assets/dog1.jpg" alt="Blog" />
+              <div
+                v-lazy-container="{
+                  selector: 'img',
+                  loading:
+                    'https://cdn2.vectorstock.com/i/1000x1000/58/31/loading-icon-on-black-vector-24545831.jpg',
+                }"
+              >
+                <img
+                  class="img-fluid shadow lazy-img-fadein"
+                  data-src="https://images.unsplash.com/photo-1516222338250-863216ce01ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80"
+                  alt="Blog"
+                />
+              </div>
+
               <div class="p-1 hero-blog-badges text-center">
                 <a class="p-2 mb-1" href="#">
                   <i class="px-1 fas fa-calendar-alt"></i>15th Feb 2020</a
@@ -19,11 +32,12 @@
                   <div class="col-md-2">
                     <img
                       class="img-fluid rounded-circle"
-                      src="../assets/author2.jpg"
+                      src="../assets/author0.jpeg"
                       alt="author"
                     />
                   </div>
                   <div class="col-md-10">
+                    <h3 class="featured">Featured Article</h3>
                     <h2>The Dog Days of Summer ! Chilling by the pool . . .</h2>
                   </div>
                 </div>
@@ -32,7 +46,11 @@
           </div>
           <div class="col-lg-4">
             <div class="hero-blog mb-3 mt-1 shadow">
-              <img class="img-fluid" src="../assets/img1.jpg" alt="Blog" />
+              <img
+                class="img-fluid shadow"
+                src="../assets/img1.jpg"
+                alt="Blog"
+              />
               <div class="hero-blog-badges text-center">
                 <a class="mb-1" href="#">
                   <i class="px-1 fas fa-calendar-alt"></i>1st Apr 2021</a
@@ -45,7 +63,7 @@
                   <div class="col-sm-2">
                     <img
                       class="img-fluid rounded-circle"
-                      src="../assets/author5.jpg"
+                      src="../assets/author01.jpeg"
                       alt="author"
                     />
                   </div>
@@ -56,7 +74,11 @@
               </div>
             </div>
             <div class="hero-blog shadow">
-              <img class="img-fluid" src="../assets/img2.jpg" alt="Blog" />
+              <img
+                class="img-fluid shadow"
+                src="../assets/img2.jpg"
+                alt="Blog"
+              />
               <div class="hero-blog-badges text-center">
                 <a class="mb-1" href="#">
                   <i class="px-1 fas fa-calendar-alt"></i>2nd Feb 2021</a
@@ -69,7 +91,7 @@
                   <div class="col-sm-2">
                     <img
                       class="img-fluid rounded-circle"
-                      src="../assets/author6.jpg"
+                      src="../assets/author02.jpeg"
                       alt="author"
                     />
                   </div>
@@ -123,13 +145,6 @@
                     voluptate aperiam?..... dolor sit amet consectetur,
                     adipisicing elit. Molestiae aut eos blanditiis, vitae
                     laboriosam nobis tempora corporis placeat quam atque.
-                  </p>
-                  <br />
-                  <p>
-                    Mariam dolor sit amet consectetur adipisicing elit. Unde
-                    ipsa labore esse fugiat numquam tenetur illum at, quasi
-                    voluptate aperiam?..... dolor sit amet consectetur,
-                    adipisicing elit
                   </p>
                   <div class="badges">
                     <a href="#">Dogs</a>
@@ -258,8 +273,8 @@
             <article class="row author mb-3">
               <div class="col-sm-4">
                 <img
-                  class="img-fluid rounded-circle w-75 h-75"
-                  src="../assets/author2.jpg"
+                  class="img-fluid rounded-circle w-75"
+                  src="../assets/author01.jpeg"
                   alt="author"
                 />
               </div>
@@ -279,8 +294,8 @@
             <article class="row author mb-3">
               <div class="col-sm-4">
                 <img
-                  class="img-fluid rounded-circle w-75 h-75"
-                  src="../assets/author4.jpg"
+                  class="img-fluid rounded-circle w-75"
+                  src="../assets/author02.jpeg"
                   alt="author"
                 />
               </div>
@@ -299,8 +314,8 @@
             <article class="row author mb-3">
               <div class="col-sm-4">
                 <img
-                  class="img-fluid rounded-circle w-75 h-75"
-                  src="../assets/author5.jpg"
+                  class="img-fluid rounded-circle w-75"
+                  src="../assets/author04.png"
                   alt="author"
                 />
               </div>
@@ -320,8 +335,8 @@
             <article class="row author mb-3">
               <div class="col-sm-4">
                 <img
-                  class="img-fluid rounded-circle w-75 h-75"
-                  src="../assets/author6.jpg"
+                  class="img-fluid rounded-circle w-75"
+                  src="../assets/author0.jpeg"
                   alt="author"
                 />
               </div>
@@ -380,6 +395,12 @@
         </div>
       </div>
     </section>
+    <!-- <img
+      v-lazy="
+        `https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg`
+      "
+      alt="Periscope"
+    /> -->
     <!-- Footer -->
     <footer class="footer py-4">
       <div class="container">
@@ -395,16 +416,17 @@
           </div>
           <div class="usefull-links col-md-4">
             <h4>Usefull links</h4>
-
-            <li>Home</li>
-            <li>Login/signup</li>
-            <li>Contact us</li>
-            <li>Search Image</li>
-            <li>Terms and conditions</li>
+            <ul>
+              <li>Home</li>
+              <li>Login/signup</li>
+              <li>Contact us</li>
+              <li>Search Image</li>
+              <li>Terms and conditions</li>
+            </ul>
           </div>
           <div class="col-md-4">
             <h4 class="search">Search</h4>
-            <Search />
+            <Search class="footer-search" />
           </div>
           <div class="mine w-100 text-center my-5">
             <p>
@@ -479,6 +501,9 @@ img.rounded-circle {
   bottom: 10px;
   left: 10px;
 }
+.featured {
+  color: rgb(231, 231, 9);
+}
 
 // Main blogs
 .blog-posts {
@@ -494,10 +519,18 @@ img.rounded-circle {
 }
 .blog-post p {
   font-size: 0.8rem !important;
+  height: 55px;
+  // text-overflow: ellipsis;
+  overflow: hidden;
+  // position: relative;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 400px;
+  display: -webkit-box;
 }
 .blog-post img {
   width: 100%;
-  height: 100%;
+  height: 170px;
   object-fit: cover;
 }
 .badges {
@@ -588,4 +621,47 @@ footer {
     color: rgb(250, 250, 11) !important;
   }
 }
+.footer-search {
+  ::v-deep {
+    input {
+      max-width: 690px;
+      width: 100%;
+    }
+  }
+}
+.v-lazy-image {
+  opacity: 0;
+  transition: opacity 2s;
+}
+.v-lazy-image-loaded {
+  opacity: 1;
+}
+.lazy-img-fadein[lazy="loaded"] {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.usefull-links ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  display: block;
+  li {
+    margin: 0;
+  }
+}
 </style>
+
+
+
+

@@ -10,9 +10,7 @@
       </p>
       <!-- </div> -->
       <!-- <div> -->
-      <button class="coming-soon-btn" @click="handleHomeNav">
-        Take me to Home
-      </button>
+      <button class="coming-soon-btn" @click="handleHomeNav">Back Home</button>
       <!-- </div> -->
     </div>
   </div>
@@ -30,18 +28,18 @@ export default {
 
 <style scoped lang="scss" >
 body {
-  background: #0f2027; /* fallback for old browsers */
+  background: #1f2833; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #2c5364,
     #203a43,
-    #0f2027
+    #1f2833
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #2c5364,
     #203a43,
-    #0f2027
+    #1f2833
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -68,23 +66,23 @@ body {
   h1 {
     letter-spacing: 0.5em;
     font-size: 5rem;
-    color: white;
+    color: #66fcf1;
     font-weight: 600;
   }
   p {
     font-size: 1.3rem;
-    color: #a79d9d;
+    color: #66fcf1;
     padding-left: 135px;
   }
   .coming-soon-btn {
     font-size: 1.3rem;
     color: white;
     margin: 40px 425px;
-    height: 40px;
+    border-radius: 5px;
     background: none;
     outline: none;
     padding: 8px;
-    border: solid 1.2px white;
+    border: solid 2px #ccccf1;
   }
 }
 </style>

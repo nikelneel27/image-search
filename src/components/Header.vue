@@ -5,21 +5,24 @@
         <img @click="handleLogoClick" :src="image" style="width: 40px" />
       </div>
 
-      <Search />
-      <div class="links">
-        <ul>
-          <li @click="hangleNewPageClick">Brands</li>
-          <li @click="hangleBlogPage">Blogs</li>
-          <li @click="hangleNewPageClick">:::</li>
-        </ul>
-      </div>
-      <!-- <div @click="hangleNewPageClick" class="submit-photo">
+      <div class="links-flex">
+        <Search class="header-search" />
+        <div class="links">
+          <ul>
+            <li @click="hangleNewPageClick">Brands</li>
+            <li @click="hangleBlogPage">Blogs</li>
+            <!-- <li @click="hangleNewPageClick">:::</li> -->
+          </ul>
+        </div>
+
+        <!-- <div @click="hangleNewPageClick" class="submit-photo">
         <button class="button-submit-photo">Submit a photo</button>
       </div> -->
-      <div @click="handleLoginClick" class="user-icon">
-        <i class="fas user-icon fa-user-circle fa-2x"></i>
+        <div @click="handleLoginClick" class="user-icon">
+          <i class="fas fa-user-circle fa-2x"></i>
+        </div>
+        <div class="logout-btn"><Logout /></div>
       </div>
-      <div class="logout-btn"><Logout /></div>
     </div>
 
     <!-- <HeaderSecond /> -->
@@ -71,13 +74,20 @@ export default {
 .header {
   margin: 20px;
   display: flex;
-  justify-content: inherit;
+  justify-content: space-between;
   align-items: center;
   .logo {
     background-color: #66fcf1;
     border: 2px solid #66fcf1;
     cursor: pointer;
   }
+}
+.links-flex {
+  display: flex;
+  align-items: center;
+}
+.header-search {
+  margin-right: 10px;
 }
 
 ul {
@@ -87,26 +97,27 @@ ul {
 }
 li {
   margin-left: 20px;
-  align-items: center;
+  float:left;
+  text-align: center;
   cursor: pointer;
 }
-.button-submit-photo {
-  color: #66fcf1;
-  font-size: 0.8rem;
-  margin-left: 30px;
-  background: none;
-  border-radius: 4px;
-  outline: none;
-  height: 30px;
-  padding: 4px;
-  border: solid rgb(150, 148, 148) 0.8px;
-}
-.button-submit-photo:hover {
-  background-color: #1f2833;
-}
+// .button-submit-photo {
+//   color: #66fcf1;
+//   font-size: 0.8rem;
+//   margin-left: 30px;
+//   background: none;
+//   border-radius: 4px;
+//   outline: none;
+//   height: 30px;
+//   padding: 4px;
+//   border: solid rgb(150, 148, 148) 0.8px;
+// }
+// .button-submit-photo:hover {
+//   background-color: #1f2833;
+// }
 
 .user-icon {
-  margin-left: 23px;
+  margin-left: 20px;
   cursor: pointer;
 }
 </style>
