@@ -8,11 +8,11 @@
         <img
           @click="handleClick(result.id)"
           class="searchImage"
-          :src="searchResults[index].urls.small"
+          :src="searchResults[index].urls.thumb"
         />
       </li>
     </ul>
-    <view-image-pop-up v-if="showImagePopUp" @tooglePopUp="tooglePopUp" />
+    <ViewImagePopUp v-if="showImagePopUp" @tooglePopUp="tooglePopUp" />
   </div>
 </template>
 
@@ -68,36 +68,44 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.search-images {
+  background-color: #0b0c10;
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 250px;
+  padding-top: 150px;
 }
 li {
-  height: 50vh;
+  /* height: 50vh; */
   flex-grow: 1;
   margin: 0 8px 8px 0;
-}
-li:last-child {
-  flex-grow: 10;
+  text-decoration: none;
+  list-style: none;
+  img {
+    box-shadow: 0px 0px 0.5px #ccc;
+  }
 }
 
 .searchImage {
-  max-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
+  width: 100%;
+  /* object-fit: cover; */
+  /* vertical-align: bottom; */
   border-radius: 4px;
 }
 .search-name {
   position: absolute;
-  top: 180px;
-  left: 0px;
+  top: 85px;
+  left: 18px;
 }
 .search-val-size {
   padding-left: 20px;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 300;
 }
 </style>

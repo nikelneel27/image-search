@@ -425,8 +425,8 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <h4 class="search">Search</h4>
-            <Search class="footer-search" />
+            <!-- <h4 class="search">Search</h4>
+            <Search class="footer-search" /> -->
           </div>
           <div class="mine w-100 text-center my-5">
             <p>
@@ -441,11 +441,11 @@
 </template>
 
 <script>
-import Search from "../components/Search";
+// import Search from "../components/Search";
 export default {
   name: "BlogPage",
   components: {
-    Search,
+    // Search,
   },
 };
 </script>
@@ -469,7 +469,7 @@ h5 {
 }
 
 .hero {
-  background-color: #1f2833;
+  background-color: #0b0c10;
   color: #66fcf1;
   padding-top: 135px;
 }

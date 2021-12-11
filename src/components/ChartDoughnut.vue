@@ -44,6 +44,6 @@ export default {
   height: auto;
 }
 .bar-card {
-  background-color: #0b0c10;
+  background-color: #dbdce2;
 }
 </style>

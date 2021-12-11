@@ -2,7 +2,16 @@
   <div class="login-signup">
     <div class="login-left">
       <!-- <h1>Best Image Search Site</h1> -->
-      <img src="../assets/Login.jpg" class="login-image" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1500674425229-f692875b0ab7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        class="login-image desktop-image"
+        alt=""
+      />
+      <img
+        class="login-image mob-image"
+        src="https://images.unsplash.com/photo-1579201157678-a242a244b34e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+        alt=""
+      />
       <div class="login-right">
         <!-- <form @submit.prevent="SubmitForm"> -->
         <form @submit.prevent="signUpClick">
@@ -151,9 +160,9 @@ form {
   padding: 1rem;
 }
 .login-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  filter: grayscale(20%) brightness(0.7);
+  // filter: grayscale(20%) brightness(0.7);
 }
 .login-left {
   position: relative;
@@ -167,10 +176,12 @@ form {
 
 .login-right {
   position: absolute;
-  max-width: 500px;
+
   width: 100%;
-  top: 100px;
-  right: 40px;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: auto;
   opacity: 0.7;
   background-color: #0b0c10;
   color: #fff;
@@ -187,7 +198,6 @@ form {
     #name-input,
     #number-input {
       display: block;
-
       background-color: #1f2833;
       outline: none;
       border: none;
@@ -219,7 +229,6 @@ form {
     color: white;
     outline: none;
     border: none;
-    // border: 2px solid rgb(211, 13, 13);
     padding: 1.5px 4px;
     border-radius: 10px;
     font-size: 12px;
@@ -232,5 +241,21 @@ form {
 .login-right:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .desktop-image {
+    display: none;
+  }
+  .mob-image {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .mob-image {
+    display: none;
+  }
+  .desktop-image {
+    display: block;
+  }
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="search">
     <form @submit.prevent="userSearchValue" action="">
-      <i class="fas search-icon fa-search"></i>
+      <!-- <i class="fas search-icon fa-search"></i> -->
       <input
         v-model="searchValue"
         class="search-field"
         type="search"
-        placeholder="search free high-resolution photos"
+        placeholder="Search free high-resolution photos"
       />
     </form>
   </div>
@@ -36,30 +36,34 @@ export default {
 </script>
 
 <style>
-/* .search {
-  padding-top: 20px;
+/* .search form {
+  position: relative;
 } */
-
-.search i {
+/* .search i {
   position: absolute;
-}
-.search-icon {
+  top: 12px;
+  left: 16px;
+  color: #fff;
+} */
+/* .search-icon {
   padding: 12px;
   margin-left: 50px;
-}
+} */
 .search-field {
   max-width: 690px;
   width: 100%;
   height: 40px;
   outline: none;
-  border-radius: 20px;
+  border: 1px solid rgba(223, 221, 221, 0.35);
+  border-radius: 8px;
+  background-color: #000;
+  box-shadow: rgba(17, 17, 17, 0.35) 0px 5px 15px;
+  color: #fff;
+  padding-left: 10px;
 }
-.search-field {
-  margin-left: 40px;
-  padding-left: 60px;
-}
+
 ::placeholder {
-  padding: 0px;
+  padding-left: 10px;
   font-size: 1rem;
   font-weight: lighter;
 }

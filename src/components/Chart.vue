@@ -30,7 +30,7 @@ export default {
 .grid {
   display: grid;
   gap: 2rem;
-  background-color: #1f2833;
+  background-color: #cfd7e2;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;

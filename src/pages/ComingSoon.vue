@@ -85,4 +85,13 @@ body {
     border: solid 2px #ccccf1;
   }
 }
+
+@media (max-width: 768px) {
+  .coming-soon h1 {
+    letter-spacing: 0.3em;
+    font-size: 3rem;
+    color: #66fcf1;
+    font-weight: 500;
+  }
+}
 </style>

@@ -5,6 +5,7 @@ import SearchResult from '../pages/SearchResult.vue'
 import UserProfile from '../pages/UserProfile.vue'
 import ComingSoon from '../pages/ComingSoon.vue'
 import Login from '../components/Login.vue'
+import Logout from '../components/Logout.vue'
 import SignUp from '../components/Signup.vue'
 import Dashboard from '../components/Dashboard.vue'
 import BlogPage from '../pages/BlogPage.vue'
@@ -39,6 +40,11 @@ const router = new Router({
             path: '/login',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/logout',
+            name: 'Logout',
+            component: Logout
         },
         {
             path: '/sign-up',
