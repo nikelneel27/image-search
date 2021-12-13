@@ -87,7 +87,7 @@ export default {
             emphasis: {
               focus: "series",
             },
-            data: [140, 232, 101, 264, 90, 340, 250],
+            data: [140, 212, 141, 234, 90, 350, 280],
           },
 
           {
@@ -147,7 +147,7 @@ export default {
             emphasis: {
               focus: "series",
             },
-            data: [280, 232, 220, 244, 90, 340, 250],
+            data: [295, 222, 202, 214, 60, 310, 210],
           },
         ],
       },

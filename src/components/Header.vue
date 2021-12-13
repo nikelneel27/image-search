@@ -38,18 +38,37 @@
               <div class="sidemenu__wrapper">
                 <ul class="sidemenu__list">
                   <li @click="hangleBlogPage" class="sidemenu__item">Blogs</li>
-                  <li @click="handleSignUpClick" class="sidemenu__item">
+                  <li
+                    v-if="isUserAuthenticated"
+                    @click="handleDashboardClick"
+                    class="sidemenu__item"
+                  >
+                    Dashboard
+                  </li>
+                  <li
+                    v-if="!isUserAuthenticated"
+                    @click="handleSignUpClick"
+                    class="sidemenu__item"
+                  >
                     SignUp
                   </li>
-                  <li @click="handleLoginClick" class="sidemenu__item">
+                  <li
+                    v-if="!isUserAuthenticated"
+                    @click="handleLoginClick"
+                    class="sidemenu__item"
+                  >
                     Login
                   </li>
-                  <li @click="handleLogoutClick" class="sidemenu__item">
+                  <li
+                    v-if="isUserAuthenticated"
+                    @click="handleLogoutClick"
+                    class="sidemenu__item"
+                  >
                     Logout
                   </li>
-                  <li @click="hangleNewPageClick" class="sidemenu__item">
+                  <!-- <li @click="hangleNewPageClick" class="sidemenu__item">
                     Brands
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </nav>
@@ -71,6 +90,7 @@ import image from "../assets/unsp.svg";
 // import HeaderSecond from "./HeaderSecond";
 // import Logout from "./Logout";
 import Search from "./Search";
+import firebase from "firebase";
 export default {
   name: "Header",
   data() {
@@ -94,7 +114,11 @@ export default {
       this.$router.push("/coming-soon");
     },
     handleLoginClick() {
-      this.$router.push("/login");
+      if (!this.isUserAuthenticated) {
+        this.$router.push("/login");
+      } else {
+        this.$router.push("/dashboard");
+      }
     },
     handleSignUpClick() {
       this.$router.push("/sign-up");
@@ -103,7 +127,24 @@ export default {
       this.$router.push("/blogs");
     },
     handleLogoutClick() {
-      this.$router.push("/logout");
+      firebase.auth().signOut();
+      console.log(this.user);
+      this.$router.push("/");
+    },
+    handleDashboardClick() {
+      if (this.isUserAuthenticated) {
+        this.$router.push("/dashboard");
+      } else {
+        this.$router.push("/login");
+      }
+    },
+  },
+  computed: {
+    isUserAuthenticated() {
+      var user = firebase.auth().currentUser;
+      console.log(user);
+      return user;
+      // return user !== null && user !== undefined;
     },
   },
 };

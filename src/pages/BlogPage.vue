@@ -29,14 +29,14 @@
               </div>
               <div class="hero-blog-content">
                 <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-sm-2 col-3">
                     <img
                       class="img-fluid rounded-circle"
                       src="../assets/author0.jpeg"
                       alt="author"
                     />
                   </div>
-                  <div class="col-md-10">
+                  <div class="col-sm-10">
                     <h3 class="featured">Featured Article</h3>
                     <h2>The Dog Days of Summer ! Chilling by the pool . . .</h2>
                   </div>
@@ -60,7 +60,7 @@
               </div>
               <div class="hero-blog-content">
                 <div class="row">
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 col-3">
                     <img
                       class="img-fluid rounded-circle"
                       src="../assets/author01.jpeg"
@@ -88,7 +88,7 @@
               </div>
               <div class="hero-blog-content">
                 <div class="row">
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 col-3">
                     <img
                       class="img-fluid rounded-circle"
                       src="../assets/author02.jpeg"
@@ -270,10 +270,16 @@
               </div>
             </div>
             <h4 class="aside-heading mt-4">Popular Authors</h4>
-            <article class="row author mb-3">
-              <div class="col-sm-4">
+            <article class="row author mb-3 text-center">
+              <div class="col-sm-4 col-6 text-center">
                 <img
-                  class="img-fluid rounded-circle w-75"
+                  class="
+                    img-fluid
+                    author-image-bottom
+                    rounded-circle
+                    w-75
+                    center-block
+                  "
                   src="../assets/author01.jpeg"
                   alt="author"
                 />
@@ -471,7 +477,7 @@ h5 {
 .hero {
   background-color: #0b0c10;
   color: #66fcf1;
-  padding-top: 135px;
+  padding-top: 100px;
 }
 .hero-blog {
   position: relative;
@@ -660,6 +666,11 @@ footer {
     margin: 0;
   }
 }
+// @media (max-width: 768px) {
+//   .author-image-bottom {
+//     margin: 0 auto;
+//   }
+// }
 </style>
 
 

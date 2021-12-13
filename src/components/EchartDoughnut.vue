@@ -12,13 +12,14 @@ export default {
           trigger: "item",
         },
         title: {
+          // left: "20%",
           text: "Camera's Used",
           textStyle: {
             color: "#fff",
           },
         },
         legend: {
-          bottom: "-10%",
+          bottom: "3%",
           left: "left",
           textStyle: {
             color: "#fff",
@@ -113,7 +114,7 @@ export default {
 }
 @media (max-width: 768px) {
   #notes {
-    height: 300px;
+    height: 400px;
   }
 }
 

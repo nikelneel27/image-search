@@ -1,27 +1,22 @@
 <template>
-  <div>
-    <button v-if="isLoggedIn" @click="logoutClick" class="logout">
-      Logout
-    </button>
-    <!-- <h4>{{ currentUser }}</h4> -->
-  </div>
+  <div></div>
 </template>
 
 <script>
 import firebase from "firebase";
 export default {
-  data() {
-    return {
-      isLoggedIn: false,
-      currentUser: false,
-    };
-  },
-  created() {
-    if (firebase.auth().currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
-    }
-  },
+  // data() {
+  //   return {
+  //     isLoggedIn: false,
+  //     currentUser: false,
+  //   };
+  // },
+  // created() {
+  //   if (firebase.auth().currentUser) {
+  //     this.isLoggedIn = true;
+  //     this.currentUser = firebase.auth().currentUser.email;
+  //   }
+  // },
   methods: {
     async logoutClick() {
       try {
@@ -31,6 +26,13 @@ export default {
       } catch (err) {
         console.log(err);
       }
+    },
+  },
+  computed: {
+    logout() {
+      var user = firebase.auth().signOut();
+
+      return user;
     },
   },
 };
