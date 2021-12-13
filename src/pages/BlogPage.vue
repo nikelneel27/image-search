@@ -271,7 +271,7 @@
             </div>
             <h4 class="aside-heading mt-4">Popular Authors</h4>
             <article class="row author mb-3 text-center">
-              <div class="col-sm-4 col-6 text-center">
+              <div class="col-sm-4 text-center">
                 <img
                   class="
                     img-fluid
@@ -297,10 +297,10 @@
                 </div>
               </div>
             </article>
-            <article class="row author mb-3">
-              <div class="col-sm-4">
+            <article class="row author mb-3 text-center">
+              <div class="col-sm-4 text-center">
                 <img
-                  class="img-fluid rounded-circle w-75"
+                  class="img-fluid rounded-circle w-75 center-block"
                   src="../assets/author02.jpeg"
                   alt="author"
                 />
@@ -317,10 +317,10 @@
                 </div>
               </div>
             </article>
-            <article class="row author mb-3">
-              <div class="col-sm-4">
+            <article class="row author mb-3 text-center">
+              <div class="col-sm-4 text-center">
                 <img
-                  class="img-fluid rounded-circle w-75"
+                  class="img-fluid rounded-circle w-75 center-block"
                   src="../assets/author04.png"
                   alt="author"
                 />
@@ -338,10 +338,10 @@
                 </div>
               </div>
             </article>
-            <article class="row author mb-3">
-              <div class="col-sm-4">
+            <article class="row author mb-3 text-center">
+              <div class="col-sm-4 text-center">
                 <img
-                  class="img-fluid rounded-circle w-75"
+                  class="img-fluid rounded-circle w-75 center-block"
                   src="../assets/author0.jpeg"
                   alt="author"
                 />
