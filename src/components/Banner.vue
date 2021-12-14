@@ -63,6 +63,7 @@ export default {
     background-size: cover;
     filter: grayscale(20%);
     opacity: 0.8;
+    height: 100vh;
   }
 }
 .banner {
